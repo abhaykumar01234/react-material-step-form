@@ -1,0 +1,15 @@
+.formContainer {
+  width: 100%;
+  overflow-x: hidden;
+
+  form {
+    display: flex;
+    width: calc(100% * var(--steps));
+    transform: translateX(calc(var(--currStep) * -100% / var(--steps)));
+    transition: transform 0.8s ease-in-out;
+
+    .page {
+      width: calc(100% / var(--steps));
+    }
+  }
+}

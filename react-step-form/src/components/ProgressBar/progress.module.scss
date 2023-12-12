@@ -1,0 +1,52 @@
+$size: 25px;
+$halfSize: calc($size / 2);
+
+.progressBar {
+  display: flex;
+  justify-content: center;
+
+  .step {
+    text-align: center;
+    flex-basis: calc(100% / var(--steps));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+
+    .line {
+      position: absolute;
+      height: 3px;
+      width: calc(100% - #{$size});
+      background: #000;
+      bottom: $halfSize;
+      left: calc(50% + $halfSize);
+
+      &.completed {
+        background: #ae286e;
+      }
+    }
+
+    .bullet {
+      width: $size;
+      height: $size;
+      border: 2px solid #000;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+      font-size: $halfSize;
+
+      &.completed {
+        background: #ae286e;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
